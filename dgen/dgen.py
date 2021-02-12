@@ -234,25 +234,25 @@ def main():
     parser = argparse.ArgumentParser()
    
     parser.add_argument("-w", "--words",
-            help= "鐢熸垚鏂扮殑瀛楀吀",
+            help= "生成新的字典",
             action="store_true")
     
     parser.add_argument("-a", "--add",
-            help= "杩藉姞鍗曡瘝",
+            help= "追加单词",
             action="store_true")
 
 
     parser.add_argument("-n1", "--number1",
-            help= "澧炴暟瀛�",
+            help= "增数字",
             action="store_true")
 
     parser.add_argument("-n2", "--number2",
-            help= "鍑忔暟瀛�",
+            help= "减数字",
             action="store_true")
 
 
     parser.add_argument("-r", "--replace",
-            help= "鏇挎崲鍗曡瘝",
+            help= "替换单词",
             action="store_true")
 
 
@@ -262,18 +262,18 @@ def main():
     with open(pathlib.Path(__file__).parent / 'domains.txt', "r") as f:
         domains = f.read().splitlines()
 
-    print(Fore.YELLOW + "[~] 鍩熷悕璇诲彇瀹屾垚")
+    print(Fore.YELLOW + "[~] 域名读取完成")
     print(domains)
 
     
     with open(pathlib.Path(__file__).parent / 'words.txt', "r") as f:
         words = f.read().splitlines()
     
-    print(Fore.YELLOW + "[~] 瀛楀吀璇诲彇瀹屾垚")
+    print(Fore.YELLOW + "[~] 字典读取完成")
     print(words)
 
     if args.words:
-        print(Fore.YELLOW + "[~] 鐢熸垚鏂扮殑瀛楀吀")
+        print(Fore.YELLOW + "[~] 生成新的字典")
         writefile(add_words(domains, words), pathlib.Path(__file__).parent / 'gen_words.txt')
         return 
 
@@ -321,8 +321,9 @@ def main():
                 writefile(domains_gen,output)
         
 
-    print(Fore.YELLOW + "[~] 鏂板煙鍚嶇敓鎴愬畬鎴�")
+    print(Fore.YELLOW + "[~] 新域名生成完成")
 
 
 if __name__ == "__main__":
     main()
+
